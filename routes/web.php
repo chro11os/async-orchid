@@ -20,5 +20,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/receipt/generate', [ReceiptController::class, 'generate'])->name('receipt.generate');
-
+Route::post('/receipt', [ReceiptController::class, 'store'])->name('receipt.store');
 require __DIR__.'/auth.php';
