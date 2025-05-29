@@ -10,7 +10,6 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <form action="{{ route('receipt.store') }}" method="POST">
                         @csrf
-
                         <div class="mt-4">
                             <label>Project Name:</label>
                             <input type="text" name="projectName" required class="border rounded p-2 w-full">
