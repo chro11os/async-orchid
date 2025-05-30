@@ -8,6 +8,7 @@ use App\Models\Receipt;
 use LaravelDaily\Invoices\Classes\Buyer;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use LaravelDaily\Invoices\Invoice;
+use Illuminate\Support\Str;
 class ReceiptController extends Controller
 {
     public function store(Request $request)
@@ -16,28 +17,31 @@ class ReceiptController extends Controller
             'projectName' => 'required|string|max:255',
             'customerName' => 'required|string|max:255',
             'customerBalance' => 'required|numeric',
-            'customerID' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'projectStart' => 'required|date',
             'projectEnd' => 'required|date',
         ]);
+
+        do {
+            $customerID = 'CUS-' . strtoupper(Str::random(8));
+        } while (Receipt::where('customerID', $customerID)->exists());
 
         $receipt = Receipt::create([
             'date' => Carbon::now()->toDateString(),
             'time' => Carbon::now()->toTimeString(),
             'customerName' => $validated['customerName'],
             'customerBalance' => $validated['customerBalance'],
-            'customerID' => $validated['customerID'],
+            'customerID' => $customerID,
             'projectName' => $validated['projectName'],
-            'projectStart' => strtotime($validated['projectStart']),
-            'projectEnd' => strtotime($validated['projectEnd']),
+            'projectStart' => $validated['projectStart'],
+            'projectEnd' => $validated['projectEnd'],
         ]);
 
         // Build Buyer and Item
         $customer = new Buyer([
             'name' => $validated['customerName'],
             'custom_fields' => [
-                'customer ID' => $validated['customerID'],
+                'customer ID' => $customerID,
             ],
         ]);
 

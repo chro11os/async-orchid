@@ -18,10 +18,10 @@ return new class extends Migration
             $table->time('time');
             $table->string('customerName');
             $table->float('customerBalance');
-            $table->string('customerID');
+            $table->string('customerID')->unique();
             $table->string('projectName');
-            $table->integer('projectStart');
-            $table->integer('projectEnd');
+            $table->date('projectStart');
+            $table->date('projectEnd');
         });
     }
 
