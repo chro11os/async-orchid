@@ -1,9 +1,8 @@
 {
     "version": 2,
+    "framework": null,
     "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.7.3"
-        }
+        "api/index.php": { "runtime": "vercel-php@0.7.3" }
     },
     "routes": [
         {
@@ -14,7 +13,8 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://async-orchid.vercel.app",
+        "APP_URL": "https://your.url.from.vercel.app",
+        "APP_KEY": "mBj7buWeGSIU9esi4eDwLnAM1Zd8LCwtFvm941nQmbk=",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
