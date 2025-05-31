@@ -5,6 +5,12 @@
 /* Custom CSS for specific aesthetic components */
 body {
     font-family: 'Figtree', sans-serif; /* Ensure Figtree is applied */
+    /* Your existing body styles (like background-color, font-family) will remain */
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjusts the size of the grid squares */
+    background-position: -1px -1px; /* Optional: to align grid lines nicely */
 }
 .glassmorphism-header {
     background: rgba(20, 20, 22, 0.65); /* Semi-transparent dark background */

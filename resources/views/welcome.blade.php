@@ -18,12 +18,12 @@
     <header class="fixed top-0 left-0 right-0 z-50 glassmorphism-header">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center h-16">
             <div class="flex items-center space-x-8">
-                <a href="/" class="text-xl font-bold text-white hover:opacity-80 transition-opacity">Logo Natin?</a>
-                {{-- Removed main navigation links as per request --}}
+                {{-- Updated to use an image for the logo --}}
+                <a href="/" class="hover:opacity-80 transition-opacity">
+                    <img src="{{ asset('img/async-logo.png') }}" alt="Async Logo" class="h-8 w-auto"> {{-- Adjust h-8 (height) as needed --}}
+                </a>
             </div>
             <div class="flex items-center space-x-4">
-                {{-- Removed social media links as per request --}}
-
                 @auth
                     <a href="{{ url('/dashboard') }}" class="text-gray-300 hover:text-white transition-colors auth-link">Dashboard</a>
                     <form method="POST" action="{{ route('logout') }}">
@@ -33,10 +33,15 @@
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="text-gray-300 hover:text-white transition-colors auth-link">Log in</a>
+                    {{-- Ensure 'help' is a named route in your web.php --}}
+                    <a href="{{ route('help') }}" class="text-gray-300 hover:text-white transition-colors auth-link">Help</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-2 text-white bg-purple-600 hover:bg-purple-700 transition-colors auth-link auth-link-primary">Register</a>
+                    {{-- Ensure 'about' is a named route and 'register' route check is intended here --}}
+                    @if (Route::has('register')) {{-- This condition was from your provided code --}}
+                    <a href="{{ route('about') }}" class="ml-2 text-gray-300 hover:text-white transition-colors auth-link">About</a>
+                    @else
+                        {{-- Fallback or alternative if register route doesn't exist but you still want an About link --}}
+                        <a href="{{ route('about') }}" class="text-gray-300 hover:text-white transition-colors auth-link ml-2">About</a>
                     @endif
                 @endauth
 

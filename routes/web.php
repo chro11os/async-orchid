@@ -13,6 +13,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// In routes/web.php
+Route::get('/help', function () {
+    return view('help');
+})->name('help'); // Optional: naming the route
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about'); // Optional: naming the route
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
