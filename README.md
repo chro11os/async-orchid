@@ -46,7 +46,7 @@ A Laravel application for generating official receipts (ORs) efficiently. This i
     php artisan key:generate
     ```
 
-6.  **Configure Environment Variables (`.env` file):**
+6.  **Configure Environment Variables (`.env` file): THIS IS NOT NEEDED AS THERE IS ALREADY A .ENV BAKED INTO THE REPO**
     Open the `.env` file and update the following variables, especially the database connection details:
     ```dotenv
     APP_NAME="Async Orchid OR Generator"
