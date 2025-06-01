@@ -1,4 +1,4 @@
-# [Your Project Name - e.g., Async Orchid OR Generator]
+# Async Orchid OR Generator
 
 [Brief description of your project - e.g., A Laravel application for generating official receipts (ORs) efficiently. This is a passion project by The Async Studio.]
 
