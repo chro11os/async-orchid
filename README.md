@@ -7,7 +7,6 @@ A Laravel application for generating official receipts (ORs) efficiently. This i
 * User-friendly interface for OR data input ⌨️
 * PDF generation of official receipts 📄
 * Secure user authentication 🔒
-* [Add more features as applicable]
 
 ## Requirements 🛠️
 
