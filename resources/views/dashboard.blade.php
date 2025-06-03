@@ -44,11 +44,6 @@
                 @endauth
 
                 {{-- Removed dark mode button as per previous instructions on other pages, can be re-added if needed --}}
-                {{-- <button aria-label="Toggle dark mode" class="text-gray-300 hover:text-white transition-colors ml-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-                    </svg>
-                </button> --}}
             </div>
         </nav>
     </header>
@@ -56,16 +51,13 @@
     <main class="flex-grow flex flex-col items-center pt-24 pb-16 px-4"> {{-- Adjusted pt-24 for page title --}}
         {{-- Dashboard Content --}}
         <div class="w-full max-w-5xl mx-auto">
-            {{-- Page Title (from user's provided dashboard HTML) --}}
+            {{-- Page Title (from user's provided dashboard HTML, now styled like welcome page) --}}
             <h2 class="font-bold text-3xl text-white leading-tight drop-shadow-md mb-8 text-center sm:text-left">
-                {{ __('Orchid') }} {{-- Assuming this is the desired title for the dashboard page --}}
+                <span class="highlight-smarter">Async</span> / <span class="highlight-effortlessly">Orchid</span>
             </h2>
 
             {{-- Form Container from user's provided dashboard HTML --}}
-            {{-- The outermost div from user's code is used as the main content wrapper here --}}
             <div class="backdrop-blur-lg bg-[#0b1f35]/60 border border-white/20 shadow-2xl rounded-2xl p-6">
-                {{-- The py-12 bg-gradient... section from user's code is omitted to avoid redundant full-screen backgrounds --}}
-                {{-- The inner form container from user's code --}}
                 <div class="backdrop-blur-lg bg-white/70 dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-2xl rounded-2xl p-6 sm:p-10 transition duration-300">
                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-8">Generate Official Receipt</h3>
 
